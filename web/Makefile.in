@@ -394,6 +394,7 @@ dist_web_DATA = status.xsl \
                 admin.html \
                 index.html \
                 favicon.ico \
+				fallback-*.* \
                 error.mp3 \
                 status-json.xsl \
                 xml2json.xslt
