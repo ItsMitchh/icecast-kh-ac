@@ -41,7 +41,7 @@ jobs :
 
       - name : Build Docker Metadata
         id : meta
-        uses : crazy-max/ghaction-docker-meta@v2
+        uses : docker/metadata-action@v3
         with :
           images : |
             azuracast/icecast-kh-ac
@@ -49,7 +49,7 @@ jobs :
           tags : |
             type=raw,value=latest,enable=${{ endsWith(github.ref, github.event.repository.default_branch) }}
             type=ref,event=branch
-            type=semver,pattern={{version}}
+            type=ref,event=tag
 
       - name : Publish to Docker Hub
         uses : docker/build-push-action@v2
